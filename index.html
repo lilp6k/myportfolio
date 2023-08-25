@@ -9,17 +9,49 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="favicon_io/site.webmanifest">  
     <script src="snowstormv144_20131208/snowstorm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
     <script>
-        snowStorm.snowColor = '#FC5362';   // blue-ish snow!?
-        snowStorm.flakesMaxActive = 64;    // show more snow on screen at once
-        snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
-        snowStorm.snowCharacter = '♥';
-        snowStorm.snowStick = true;
-        snowStorm.useMeltEffect = true;
-        snowStorm.useTwinkleEffect = true;
-        snowStorm.randomizeWind()
-    
-        </script>
+    //////////////////////
+    const count = 500,
+  defaults = {
+    origin: { y: 0.7 },
+  };
+
+function fire(particleRatio, opts) {
+  confetti(
+    Object.assign({}, defaults, opts, {
+      particleCount: Math.floor(count * particleRatio),
+    })
+  );
+}
+
+fire(0.25, {
+  spread: 120,
+  startVelocity: 55,
+});
+
+fire(0.2, {
+  spread: 120,
+});
+
+fire(0.35, {
+  spread: 120,
+  decay: 0.91,
+  scalar: 0.8,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 25,
+  decay: 0.92,
+  scalar: 1.2,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 45,
+});
+    </script>
 </head>
 <body>
     <style>
@@ -289,14 +321,7 @@
 
         }
     </style>
-    <script>
-        window.open = function() {};
-        window.print = function() {};
-        // Support hover state for mobile.
-        if (false) {
-            window.ontouchstart = function() {};
-        }
-    </script>
+
     <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css">
     <div class="container">
         <div class="balloon">
@@ -314,7 +339,13 @@
             </div>
         </div>
          <h1>Savanah!</h1>
-
+<script>  snowStorm.snowColor = '#FC5362';   // blue-ish snow!?
+    snowStorm.flakesMaxActive = 64;    // show more snow on screen at once
+    snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
+    snowStorm.snowCharacter = '♥';
+    snowStorm.snowStick = true;
+    snowStorm.useMeltEffect = true;
+    snowStorm.useTwinkleEffect = true;
+    snowStorm.randomizeWind()</script>
     </div>
-
 </body>
